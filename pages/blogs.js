@@ -30,7 +30,7 @@ export default function Blogs({ blogs }) {
   );
 }
 
-export async function getStaticProps(){
+export async function getServerSideProps(){
   const blogs  = await getBlogs();
 
   return {
