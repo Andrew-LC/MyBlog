@@ -15,7 +15,7 @@ export default function Home() {
       <section className="h-full pt-28 p-4 flex flex-col items-center gap-10 lg:w-6/12">
         <Section>
           <h1 className='font-extrabold text-2xl mb-4'>Andrew Lamichhane<span className='block text-lg text-center font-normal'>(Full Stack Developer)</span></h1>  
-          <Image src={profile} alt="profile-image" className="rounded-full border-2 border-white w-44 h-44"/>
+          <Image src={profile} alt="profile image" className="rounded-full border-2 border-white w-44 h-44"/>
         </Section>
         <Section>
          <h3 className='font-semibold text-xl w-9/12 underline'>About Me:</h3>
