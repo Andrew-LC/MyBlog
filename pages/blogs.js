@@ -18,7 +18,7 @@ export default function Blogs({ blogs }) {
             blogs.map((post) => {
              return(
                 <li className="w-full h-64 flex flex-col items-center mb-4 lg:mb-4" key={post.id}>
-                  <Image src={post.cover} width={500} height={450} className="h-4/5 rounded-md"/>
+                  <Image src={post.cover} alt={post.title} width={500} height={450} className="h-4/5 rounded-md"/>
                   <Link href={`/post/${post.id}`} className="text-[1.1rem] text-justify font-semibold p-0">{post.title}</Link>
                 </li>
              ) 
