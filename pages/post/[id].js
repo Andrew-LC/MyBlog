@@ -19,13 +19,13 @@ export default function Post({ data }) {
   );
 }
 
-export async function getStaticPaths() {
-  const paths = await getAllIds();
-  return {
-    paths,
-    fallback: false,
-  }
-}
+//export async function getStaticPaths() {
+//  const paths = await getAllIds();
+//  return {
+//    paths,
+//    fallback: false,
+//  }
+//}
 
 export async function getServerSideProps({ params }) {
   const data = await getSingleBlogPage(params.id)
