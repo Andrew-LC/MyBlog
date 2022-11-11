@@ -13,7 +13,7 @@ export default function Post({ data }) {
       <h1 className="font-extrabold pb-3 text-2xl">{data.title}</h1>
       <span className="block text-black-100 font-light pb-4">{data.date}</span>
       <hr className="pb-4"/>
-      <section dangerouslySetInnerHTML={{__html: data.contentHtml}}></section> 
+      <section className="prose lg:prose-xl" dangerouslySetInnerHTML={{__html: data.contentHtml}}></section> 
      </motion.div> 
     </Layout>
   );
