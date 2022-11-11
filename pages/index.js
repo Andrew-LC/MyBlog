@@ -40,7 +40,7 @@ export default function Home({ featuredBlogs }) {
           </p>
         </Section>
         <div className="w-9/12">
-          <h3 className="dark:text-heading font-semibold text-xl w-9/12 pb-4 underline">
+          <h3 className="dark:text-heading font-semibold text-xl w-full pb-4 underline">
             Technologies I Use:
           </h3>
           <IconStack>
