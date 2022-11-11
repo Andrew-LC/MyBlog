@@ -11,7 +11,11 @@ module.exports = {
         cassannet: ["Cassannet", "sans-serif"]
       },
       colors: {
-        'dark-mode': '#202023'
+        'dark-mode': '#202023',
+        'para': '#b1b1b1',
+        'heading': '#eaeaea',
+        'heading-light': '#282828',
+        'para-light': 'black'
       }
     },
   },
