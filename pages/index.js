@@ -32,11 +32,11 @@ export default function Home({ featuredBlogs }) {
           <h3 className="dark:text-heading font-semibold text-xl w-9/12 underline">
             About Me:
           </h3>
-          <p className="text-left w-9/12 text-lg">
+          <p className="text-justify w-9/12 text-lg">
             I'm a Full Stack Developer based in India. I have a passion for
             learning everything and tinkering around a lot. My hobbies include
             watching anime, reading manga, reading books of any kind that I can
-            find and coming up with new ideas to cure my boredom.
+            find and coming up with new ideas to cure my boredom .
           </p>
         </Section>
         <div className="w-9/12">
@@ -61,7 +61,7 @@ export default function Home({ featuredBlogs }) {
           {featuredBlogs.map((singlePost) => {
             return (
               <div key={singlePost.id} className="mt-4 border p-2">
-                <h3 className="text-lg font-extrabold pb-1">
+                <h3 className="text-lg font-bold pb-1">
                   {singlePost.title}
                 </h3>
                 <p>
@@ -74,7 +74,7 @@ export default function Home({ featuredBlogs }) {
             );
           })}
           <div className="w-full flex justify-center">
-            <Link href={"/blogs"} className="p-4 mt-6 bg-orange-400 rounded-md">
+            <Link href={"/blogs"} className="p-4 mt-6 text-white bg-orange-400 rounded-md">
               Read More Posts
             </Link>
           </div>
