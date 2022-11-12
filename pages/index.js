@@ -14,22 +14,20 @@ export default function Home({ featuredBlogs }) {
       <Head>
         <title>Andrew Lamichhane</title>
       </Head>
-      <section className="text-heading-light dark:text-para  h-full pt-28 p-4 flex flex-col items-center gap-10 lg:w-6/12">
+      <section className="text-heading-light dark:text-para  h-full pt-36 p-4 flex flex-col items-center gap-10 lg:w-6/12">
         <Section>
-          <h1 className="dark:text-heading font-extrabold text-2xl mb-4">
-            Andrew Lamichhane
-            <span className="block dark:text-para text-lg text-center font-normal">
-              (Full Stack Developer)
-            </span>
+          <h1 className="font-cassannet dark:text-heading font-extrabold text-3xl mb-2 lg:text-4xl">
+           Full Stack Developer 
           </h1>
+          <p className="text-lg text-center w-9/12 pb-6 lg:w-10/12 lg:pb-10">I design and code the things you need and much more !</p>
           <Image
             src={profile}
             alt="profile image"
-            className="rounded-full border-2 border-white w-44 h-44"
+            className="rounded-full border-2 border-white w-40 h-40"
           />
         </Section>
         <Section>
-          <h3 className="dark:text-heading font-semibold text-xl w-9/12 underline">
+          <h3 className="font-cassannet dark:text-heading font-semibold text-xl w-9/12 pb-1">
             About Me:
           </h3>
           <p className="text-justify w-9/12 text-lg">
@@ -40,7 +38,7 @@ export default function Home({ featuredBlogs }) {
           </p>
         </Section>
         <div className="w-9/12">
-          <h3 className="dark:text-heading font-semibold text-xl w-full pb-4 underline">
+          <h3 className="font-cassannet dark:text-heading font-semibold text-xl w-full pb-4">
             Technologies I Use:
           </h3>
           <IconStack>
@@ -55,7 +53,7 @@ export default function Home({ featuredBlogs }) {
           </IconStack>
         </div>
         <section className="w-10/12 lg:w-9/12">
-          <h3 className="text-xl font-bold text-heading-light dark:text-heading underline">
+          <h3 className="text-xl font-bold text-heading-light dark:text-heading font-cassannet">
             Featured Posts
           </h3>
           {featuredBlogs.map((singlePost) => {

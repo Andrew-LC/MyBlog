@@ -19,12 +19,12 @@ export default function Blogs({ blogs }) {
           initial={{ y: 10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="w-full p-7 grid grid-cols-1 auto-rows-auto gap-6 mb-6 lg:w-8/12 lg:grid-cols-2"
+          className="w-full p-7 grid grid-cols-1 auto-rows-auto gap-6 mb-6 lg:w-9/12 lg:grid-cols-2"
         >
           {blogs.map((post) => {
             return (
               <li
-                className="w-full h-64 flex flex-col items-center mb-4 lg:mb-4"
+                className="w-full h-64 flex flex-col items-center mb-4 lg:mb-6"
                 key={post.id}
               >
                 <Image
@@ -36,7 +36,7 @@ export default function Blogs({ blogs }) {
                 />
                 <Link
                   href={`/post/${post.id}`}
-                  className="text-[1.1rem] text-justify font-semibold p-4"
+                  className="text-[1.1rem] text-justify font-semibold pt-4 lg:text-md"
                 >
                   {post.title}
                 </Link>

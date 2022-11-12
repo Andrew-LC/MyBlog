@@ -28,21 +28,21 @@ export default function Navigation() {
         >
           <nav
             onClick={handleClose}
-            className="relative h-full flex flex-col items-center justify-center gap-10"
+            className="relative h-full flex flex-col items-center justify-center gap-10 font-cassannet"
           >
             <IoClose
               size={"2rem"}
-              className="absolute top-10 right-10 cursor-pointer"
+              className="absolute top-10 right-10 cursor-pointer hover:bg-white/50 hover:backdrop-blur-lg hover:rounded-full hover:p-1"
             />
-            <Link href="/" className="font-bold text-2xl">
+            <Link href="/" className="font-bold text-3xl">
               Home
             </Link>
-            <Link href="/blogs" className="font-bold text-2xl">
+            <Link href="/blogs" className="font-bold text-3xl">
               Blog
             </Link>
             <Link
               href="https://github.com/Andrew-LC/MyBlog"
-              className="font-bold text-2xl"
+              className="font-bold text-3xl"
             >
               Source Code
             </Link>

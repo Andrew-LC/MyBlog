@@ -1,7 +1,14 @@
-export default function Section({ children }){
-  return(
-    <div className="flex flex-col items-center justify-center">
+import { motion } from "framer-motion";
+
+export default function Section({ children }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      delay
+      className="flex flex-col items-center justify-center"
+    >
       {children}
-    </div>
+    </motion.div>
   );
 }
