@@ -14,3 +14,6 @@ A simple Blog portfolio made using next js and notion to create a smoothless exp
 
 ## Featured Section
 ![Featured Section](./public/picutures/featuredsection.png)
+
+## Notion database to update posts
+![Notion Database](./public/picutures/notioncms.png)
