@@ -3,16 +3,14 @@ import Layout from "../../components/layouts/main";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { useEffect } from "react";
-import hljs from "hljs";
+import Prism from "prismjs";
 
 export default function Post({ data }) {
-  const loaderHighlight = () => {
-    document.querySelectorAll("pre > code").forEach((el) => {
-      hljs.highlightElement(el);
-    });
-    console.log("Highlighted");
-  };
-
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      Prism.highlightAll();
+    }
+  }, []);
   return (
     <Layout>
       <Head>
@@ -24,13 +22,12 @@ export default function Post({ data }) {
         transition={{ duration: 0.4 }}
         className="pt-28 lg:pt-24 p-6 lg:w-6/12"
       >
-        <h1 className="font-extrabold pb-3 text-2xl">{data.title}</h1>
+        <h1 className="font-extrabold pb-3 text-3xl">{data.title}</h1>
         <span className="block text-black-100 font-light pb-4">
           {data.date}
         </span>
         <hr className="pb-4" />
         <section
-          onLoad={() => loaderHighlight()}
           className="mx-auto prose prose-lg prose-stone prose-img:rounded-md dark:prose-invert lg:prose-lg"
           dangerouslySetInnerHTML={{ __html: data.contentHtml }}
         ></section>

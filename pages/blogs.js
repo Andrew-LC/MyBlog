@@ -18,7 +18,7 @@ export default function Blogs({ blogs }) {
         <motion.ul
           initial={{ y: 10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.2 }}
           className="w-full p-7 grid grid-cols-1 auto-rows-auto gap-6 mb-6 lg:w-9/12 lg:grid-cols-2"
         >
           {blogs.map((post) => {
