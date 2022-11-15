@@ -1,24 +1,14 @@
 import { getSingleBlogPage, getAllIds } from "../../lib/notion";
 import Layout from "../../components/layouts/main";
-import { motion } from "framer-motion";
 import Head from "next/head";
-import { useEffect } from "react";
-
 
 export default function Post({ data }) {
-  useEffect(() => {
-    Prism.highlightAll();
-  }, []);
-
   return (
     <Layout>
       <Head>
         <title>{data.title}</title>
       </Head>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.4 }}
+      <div
         className="pt-28 lg:pt-24 p-6 lg:w-6/12"
       >
         <div className="mx-auto max-w-[74ch]">
@@ -32,7 +22,7 @@ export default function Post({ data }) {
           className="mx-auto prose prose-lg  prose-stone prose-p:text-justify prose-img:rounded-md dark:prose-invert"
           dangerouslySetInnerHTML={{ __html: data.contentHtml }}
         ></section>
-      </motion.div>
+      </div>
     </Layout>
   );
 }
