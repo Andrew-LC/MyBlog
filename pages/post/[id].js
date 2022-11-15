@@ -30,7 +30,7 @@ export default function Post({ data }) {
         transition={{ duration: 0.4 }}
         className="pt-28 lg:pt-24 p-6 lg:w-6/12"
       >
-        <div className="ml-0 md:ml-[6rem] lg:ml-[2.6rem]">
+        <div className="mx-auto max-w-[75ch]">
           <h1 className="font-extrabold pb-3 text-3xl">{data.title}</h1>
           <span className="block text-black-100 font-light pb-4">
             {data.date}
@@ -38,7 +38,7 @@ export default function Post({ data }) {
         </div>
         <hr className="pb-4" />
         <section
-          className="mx-auto text-justify prose prose-lg  prose-stone  prose-img:rounded-md dark:prose-invert lg:prose-lg"
+          className="mx-auto prose prose-lg  prose-stone prose-p:text-justify prose-img:rounded-md dark:prose-invert"
           dangerouslySetInnerHTML={{ __html: data.contentHtml }}
         ></section>
       </motion.div>
