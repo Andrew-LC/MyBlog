@@ -5,12 +5,20 @@ import Head from "next/head";
 import { useEffect } from "react";
 import Prism from "prismjs";
 
+require("prismjs/components/prism-javascript")
+
+require("prismjs/components/prism-css")
+
+require("prismjs/components/prism-jsx")
+
 export default function Post({ data }) {
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      Prism.highlightAll();
-    }
+    Prism.highlightAll();
+    const pre = document.querySelector("pre");
+    if(pre !== null)
+      pre.classList.add("language-javascript");
   }, []);
+
   return (
     <Layout>
       <Head>
@@ -22,13 +30,15 @@ export default function Post({ data }) {
         transition={{ duration: 0.4 }}
         className="pt-28 lg:pt-24 p-6 lg:w-6/12"
       >
-        <h1 className="font-extrabold pb-3 text-3xl">{data.title}</h1>
-        <span className="block text-black-100 font-light pb-4">
-          {data.date}
-        </span>
+        <div className="ml-0 md:ml-[6rem] lg:ml-[2.6rem]">
+          <h1 className="font-extrabold pb-3 text-3xl">{data.title}</h1>
+          <span className="block text-black-100 font-light pb-4">
+            {data.date}
+          </span>
+        </div>
         <hr className="pb-4" />
         <section
-          className="mx-auto prose prose-lg prose-stone prose-img:rounded-md dark:prose-invert lg:prose-lg"
+          className="mx-auto text-justify prose prose-lg  prose-stone  prose-img:rounded-md dark:prose-invert lg:prose-lg"
           dangerouslySetInnerHTML={{ __html: data.contentHtml }}
         ></section>
       </motion.div>
