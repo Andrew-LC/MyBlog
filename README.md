@@ -8,6 +8,8 @@ A simple Blog portfolio made using next js and notion to create a smoothless exp
 - Next JS 
 - Tailwind CSS
 - Notion API
+- Remark 
+- Notion to MD
 
 ## Dark and Light Mode
 ![Dark and Light](./public/picutures/darklight.png)

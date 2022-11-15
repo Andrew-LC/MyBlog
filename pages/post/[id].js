@@ -3,20 +3,11 @@ import Layout from "../../components/layouts/main";
 import { motion } from "framer-motion";
 import Head from "next/head";
 import { useEffect } from "react";
-import Prism from "prismjs";
 
-require("prismjs/components/prism-javascript")
-
-require("prismjs/components/prism-css")
-
-require("prismjs/components/prism-jsx")
 
 export default function Post({ data }) {
   useEffect(() => {
     Prism.highlightAll();
-    const pre = document.querySelector("pre");
-    if(pre !== null)
-      pre.classList.add("language-javascript");
   }, []);
 
   return (
@@ -30,8 +21,8 @@ export default function Post({ data }) {
         transition={{ duration: 0.4 }}
         className="pt-28 lg:pt-24 p-6 lg:w-6/12"
       >
-        <div className="mx-auto max-w-[75ch]">
-          <h1 className="font-extrabold pb-3 text-3xl">{data.title}</h1>
+        <div className="mx-auto max-w-[74ch]">
+          <h1 className="font-extrabold pb-3 text-3xl lg:text-4xl">{data.title}</h1>
           <span className="block text-black-100 font-light pb-4">
             {data.date}
           </span>
