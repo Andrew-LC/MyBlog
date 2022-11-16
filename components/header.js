@@ -15,7 +15,7 @@ export default function Navigation() {
   };
 
   return (
-    <header className="w-screen shadow-sm backdrop-blur-xl backdrop-filter flex justify-center fixed">
+    <header className="w-screen shadow-sm backdrop-blur-lg backdrop-filter flex justify-center fixed">
       <div className="w-full p-4 flex items-center justify-between bg-transparent lg:w-6/12">
         <Link  href={"/"} className="text-lg font-cassannet font-extrabold">
           Andrew Lamichhane
