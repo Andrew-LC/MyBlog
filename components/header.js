@@ -51,8 +51,8 @@ export default function Navigation() {
 
         {/* ------------- Desktop Navigation -------------*/}
         <nav className="hidden relative lg:flex w-1/2 items-center justify-end gap-4 ">
-          <Link href="/blogs">Blog</Link>
-          <Link href="https://github.com/Andrew-LC/MyBlog">Source Code</Link>
+          <Link className="underline-offset-8 hover:underline" href="/blogs">Blog</Link>
+          <Link className="underline-offset-8 hover:underline" href="https://github.com/Andrew-LC/MyBlog">Source Code</Link>
         </nav>
 
         <div className="flex items-center justify-center gap-4">

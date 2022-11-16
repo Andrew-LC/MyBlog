@@ -43,7 +43,7 @@ export default function Post({ data }) {
           </span>
         </div>
         <hr className="pb-4" />
-        <section className="mx-auto prose prose-lg  prose-stone prose-pre:p-0 prose-pre:bg-transparent prose-code:p-0 prose-p:text-justify prose-img:rounded-md dark:prose-invert">
+        <section className="mx-auto prose prose-lg  prose-stone prose-pre:p-0 prose-pre:bg-transparent prose-code:p-0 prose-p:text-justify prose-a:text-orange-400  prose-a:no-underline prose-img:mx-auto prose-img:rounded-md dark:prose-invert">
           <ReactMarkdown rehypePlugins={[rehypeRaw]} components={CodeBlock}>
             {data.mdstring}
           </ReactMarkdown>
