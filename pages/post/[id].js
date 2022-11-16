@@ -2,6 +2,30 @@ import { getSingleBlogPage, getAllIds } from "../../lib/notion";
 import Layout from "../../components/layouts/main";
 import Head from "next/head";
 import ReactMarkdown from "react-markdown";
+import rehypeRaw from 'rehype-raw';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { gruvboxDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+
+
+const CodeBlock = {
+  code({ node, inline, className, children, ...props }) {
+    const match = /language-(\w+)/.exec(className || '');
+    return !inline && match ? (
+      <SyntaxHighlighter
+        style={gruvboxDark}
+        language={match[1]}
+        PreTag="div"
+        {...props}
+      >
+        {String(children).replace(/\n$/, '')}
+      </SyntaxHighlighter>
+    ) : (
+      <code className={className} {...props}>
+        {children}
+      </code>
+    );
+  },
+};
 
 export default function Post({ data }) {
   return (
@@ -19,9 +43,10 @@ export default function Post({ data }) {
           </span>
         </div>
         <hr className="pb-4" />
-        <section className="mx-auto prose prose-lg  prose-stone prose-p:text-justify prose-img:rounded-md dark:prose-invert">
-          <ReactMarkdown>{data.mdstring}</ReactMarkdown>
-          {console.log(data.mdstring)}
+        <section className="mx-auto prose prose-lg  prose-stone prose-pre:p-0 prose-pre:bg-transparent prose-code:p-0 prose-p:text-justify prose-img:rounded-md dark:prose-invert">
+          <ReactMarkdown rehypePlugins={[rehypeRaw]} components={CodeBlock}>
+            {data.mdstring}
+          </ReactMarkdown>
         </section>
       </div>
     </Layout>

@@ -8,7 +8,10 @@ A simple Blog portfolio made using next js and notion to create a smoothless exp
 - Next JS 
 - Tailwind CSS
 - Notion API
-- Remark 
+- React-Markdown
+- Prism JS 
+- React-Synatx-Highlighter
+- RehypeRaw 
 - Notion to MD
 
 ## Dark and Light Mode
