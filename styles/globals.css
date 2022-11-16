@@ -21,7 +21,6 @@ body, #__next {
   min-height: 100%;
   overflow: scroll;
   overflow-x: hidden;
-  height: 100%;
 }
 
 ::-webkit-scrollbar {

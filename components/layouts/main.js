@@ -20,8 +20,8 @@ export default function Layout({ children }) {
     <motion.main 
     initial={{opacity: 0}}
     animate={{opacity: 1}}
-    transition={{duration: 0.6}}
-    className="font-sans min-h-full bg-yellow-50 dark:bg-dark-mode dark:text-white relative scroll-smooth overflow-y-hidden  lg:flex flex-col items-center"
+    transition={{duration: 0.5}}
+    className="font-sans bg-yellow-50 dark:bg-dark-mode dark:text-white relative scroll-smooth overflow-y-hidden  lg:flex flex-col items-center"
     id="main" 
     >
       <Head>

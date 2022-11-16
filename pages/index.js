@@ -72,7 +72,7 @@ export default function Home({ featuredBlogs }) {
             );
           })}
           <div className="w-full flex justify-center">
-            <Link href={"/blogs"} className="p-4 mt-6 text-white bg-orange-400 rounded-md">
+            <Link href={"/blogs"} scroll={false} className="p-4 mt-6 text-white bg-orange-400 rounded-md">
               Read More Posts
             </Link>
           </div>
