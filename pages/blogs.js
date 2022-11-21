@@ -5,6 +5,7 @@ import Layout from "../components/layouts/main";
 import { getBlogs } from "../lib/notion";
 import imageNotFound from "../public/picutures/image-not-found.png";
 
+
 export default function Blogs({ blogs }) {
   return (
     <Layout>

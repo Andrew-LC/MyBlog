@@ -82,6 +82,7 @@ export default function Home({ featuredBlogs }) {
   );
 }
 
+
 // Change it to static props later
 export async function getServerSideProps() {
   const featuredBlogs = await getFeaturedBlogs();
