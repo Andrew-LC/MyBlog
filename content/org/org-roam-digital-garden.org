@@ -1,0 +1,42 @@
+:PROPERTIES:
+:ID: 8f4b2c10-9e3a-4d71-b812-3019a8c4e001
+:END:
+#+TITLE: Transitioning My Second Brain from Org-Roam to the Web
+#+DATE: <2026-10-22 Thu>
+#+DESCRIPTION: How I publish interconnected Emacs Org-roam nodes directly to my Next.js digital garden without leaving an Org buffer.
+#+FILETAGS: :blog:featured:emacs:org-roam:typescript:
+
+* Why Org-Roam as a Blog Source?
+
+For a long time my blog lived exclusively inside Notion, while my actual daily thinking, technical notes, and architecture sketches lived inside *Emacs* using =org-roam=. That split created friction: every time I wanted to turn an evergreen note into an article, I had to manually copy, reformat, and fix links.
+
+Now, this blog natively parses =.org= files via =uniorg= and resolves internal Org-roam =[[id:...]]= links automatically—like my note on [[id:7a1d9e22-4c11-4f08-9b55-9021b7d3f002][Building a Procedural Pixel Sakura Tree in TypeScript]].
+
+* Frictionless Publishing Workflow
+
+To promote any note from my Zettelkasten to the blog, I simply add the =:blog:= tag in the file header:
+
+#+BEGIN_SRC org
+:PROPERTIES:
+:ID: 8f4b2c10-9e3a-4d71-b812-3019a8c4e001
+:END:
+#+TITLE: Transitioning My Second Brain from Org-Roam to the Web
+#+DATE: <2026-10-22 Thu>
+#+FILETAGS: :blog:featured:emacs:org-roam:
+#+END_SRC
+
+Running =npm run sync:roam= scans my =~/org-roam= directory, copies only nodes tagged with =:blog:=, and gracefully unwraps links to private notes so broken links never leak to production.
+
+* Multi-Source Architecture
+
+Instead of locking into a single CMS, the content engine aggregates three adapters into one unified TypeScript interface:
+
+| Source | Format | Best For |
+|--------+--------+----------|
+| Emacs Org-Roam | =.org= | Evergreen notes, bidirectional backlinks, literate code |
+| Local Markdown | =.md= / =.mdx= | Quick standalone posts & repo documentation |
+| Notion CMS | API | Drafting on mobile when away from Emacs |
+
+#+BEGIN_QUOTE
+The best publishing workflow is the one that meets your notes where they already live.
+#+END_QUOTE

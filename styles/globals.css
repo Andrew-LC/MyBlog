@@ -2,33 +2,134 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=Ubuntu:wght@400;500;700&display=swap');
-
-
 @font-face {
   font-family: "Cassannet";
-  src: url("../public/fonts/Cassannet.otf");
+  src: url("/fonts/Cassannet.otf") format("opentype");
+  font-display: swap;
 }
 
-* {
-  box-sizing: border-box;
+@layer base {
+  :root {
+    --bg-primary: #faf8f5;
+    --bg-elevated: #f3efea;
+    --text-primary: #1c1917;
+    --text-secondary: #57534e;
+    --border-subtle: #e7e2da;
+    --accent-sakura: #db2777;
+  }
+
+  .dark {
+    --bg-primary: #121216;
+    --bg-elevated: #1a1a20;
+    --text-primary: #f4f4f6;
+    --text-secondary: #a1a1aa;
+    --border-subtle: #272730;
+    --accent-sakura: #f472b6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 150ms ease, color 150ms ease;
+  }
 }
 
-html,
-body, #__next {
-  padding: 0;
-  margin: 0;
-  min-height: 100%;
-  overflow: scroll;
-  overflow-x: hidden;
-}
-
+/* Custom subtle scrollbar */
 ::-webkit-scrollbar {
-    width: 0;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
+  width: 6px;
+  height: 6px;
 }
 
-* {
-  box-sizing: border-box;
-  line-height: 1.5;
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 114, 182, 0.5);
+}
+
+/* Syntax Highlighting (Highlight.js / Rehype-Highlight theme) */
+pre code.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1.1rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  background: #18181f;
+  color: #e4e4ef;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hljs-comment,
+.hljs-quote {
+  color: #71717a;
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-Addition {
+  color: #f472b6;
+}
+
+.hljs-number,
+.hljs-string,
+.hljs-meta .hljs-meta-string,
+.hljs-literal,
+.hljs-doctag,
+.hljs-regexp {
+  color: #f9a8d4;
+}
+
+.hljs-title,
+.hljs-section,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class {
+  color: #93c5fd;
+}
+
+.hljs-attribute,
+.hljs-attr,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-class .hljs-title,
+.hljs-type {
+  color: #fcd34d;
+}
+
+.hljs-symbol,
+.hljs-bullet,
+.hljs-subst,
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-link {
+  color: #6ee7b7;
+}
+
+.hljs-built_in,
+.hljs-deletion {
+  color: #fca5a5;
+}
+
+/* Pixel canvas helper */
+.pixelated-canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-crisp-edges;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
 }

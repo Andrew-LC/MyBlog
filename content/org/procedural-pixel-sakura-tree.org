@@ -1,0 +1,33 @@
+:PROPERTIES:
+:ID: 7a1d9e22-4c11-4f08-9b55-9021b7d3f002
+:END:
+#+TITLE: Building a Procedural Pixel Sakura Tree in TypeScript
+#+DATE: <2026-10-18 Sun>
+#+DESCRIPTION: Designing a low-resolution HTML5 Canvas pixel-art cherry blossom tree with deterministic branching and minimal motion.
+#+FILETAGS: :blog:featured:canvas:pixel-art:typescript:
+
+* Crisp Pixels on Modern High-DPI Screens
+
+When redesigning the front page alongside [[id:8f4b2c10-9e3a-4d71-b812-3019a8c4e001][Transitioning My Second Brain from Org-Roam to the Web]], I wanted a centerpiece that felt personal, calm, and crafted in code rather than a static profile photo.
+
+The secret to sharp procedural pixel art on an HTML5 =<canvas>= is rendering into a compact logical grid (for example =160x144= pixels) and disabling bilinear interpolation via CSS:
+
+#+BEGIN_SRC typescript
+function drawPixel(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  color: string
+) {
+  ctx.fillStyle = color;
+  ctx.fillRect(Math.round(x), Math.round(y), 1, 1);
+}
+#+END_SRC
+
+* Deterministic Bonsai Branching
+
+By seeding a lightweight pseudo-random number generator (Mulberry32), every branch angle, gnarled trunk pixel, and layered blossom cluster is 100% deterministic for a given seed—while still allowing you to click *Regenerate* to grow a brand-new sakura tree.
+
+* Keeping Animations Minimal
+
+Rather than running a heavy 60 FPS particle storm, the tree canopy itself is drawn once onto an offscreen pixel buffer. Only a handful of single-pixel petals drift gently at a capped frame rate, respecting =prefers-reduced-motion= and pausing whenever you switch tabs.
