@@ -386,9 +386,9 @@ export default function NoteGraph({
   };
 
   return (
-    <div className="rounded-2xl border border-stone-200/80 dark:border-zinc-800/90 bg-white/50 dark:bg-zinc-900/35 overflow-hidden">
+    <div className="rounded-2xl border border-stone-200/85 dark:border-[#282834] bg-white/80 dark:bg-[#181820]/90 shadow-sm shadow-stone-200/20 dark:shadow-none overflow-hidden">
       {/* Top Graph Toolbar */}
-      <div className="px-4 py-2.5 border-b border-stone-200/70 dark:border-zinc-800/80 flex flex-wrap items-center justify-between gap-2 text-xs">
+      <div className="px-4 py-2.5 border-b border-stone-200/80 dark:border-[#282834] flex flex-wrap items-center justify-between gap-2 text-xs">
         <div className="flex items-center gap-3">
           <span className="inline-flex items-center gap-1.5 font-semibold text-stone-800 dark:text-zinc-200">
             <Network className="w-3.5 h-3.5 text-sakura-500" />
@@ -421,8 +421,8 @@ export default function NoteGraph({
             onClick={() => setShowTagEdges((v) => !v)}
             className={`inline-flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-mono border transition-colors ${
               showTagEdges
-                ? "border-sakura-300 dark:border-sakura-800 bg-sakura-50/80 dark:bg-sakura-950/50 text-sakura-700 dark:text-sakura-300"
-                : "border-stone-200 dark:border-zinc-800 text-stone-500 dark:text-zinc-400"
+                ? "border-sakura-300 dark:border-sakura-800 bg-sakura-50/90 dark:bg-sakura-950/60 text-sakura-700 dark:text-sakura-300 font-semibold shadow-sm"
+                : "border-stone-200 dark:border-[#282834] text-stone-500 dark:text-zinc-400"
             }`}
             title="Toggle shared tag connections"
           >
@@ -433,7 +433,7 @@ export default function NoteGraph({
           <button
             type="button"
             onClick={() => setZoom((z) => Math.min(2, +(z + 0.2).toFixed(2)))}
-            className="p-1.5 rounded-md border border-stone-200/80 dark:border-zinc-800 text-stone-600 dark:text-zinc-400 hover:text-stone-900 dark:hover:text-zinc-100"
+            className="p-1.5 rounded-md border border-stone-200/90 dark:border-[#282834] bg-white/70 dark:bg-[#1e1e28] text-stone-600 dark:text-zinc-400 hover:text-stone-900 dark:hover:text-zinc-100 hover:border-sakura-400 dark:hover:border-sakura-400"
             title="Zoom in"
           >
             <ZoomIn className="w-3.5 h-3.5" />
@@ -441,7 +441,7 @@ export default function NoteGraph({
           <button
             type="button"
             onClick={() => setZoom((z) => Math.max(0.5, +(z - 0.2).toFixed(2)))}
-            className="p-1.5 rounded-md border border-stone-200/80 dark:border-zinc-800 text-stone-600 dark:text-zinc-400 hover:text-stone-900 dark:hover:text-zinc-100"
+            className="p-1.5 rounded-md border border-stone-200/90 dark:border-[#282834] bg-white/70 dark:bg-[#1e1e28] text-stone-600 dark:text-zinc-400 hover:text-stone-900 dark:hover:text-zinc-100 hover:border-sakura-400 dark:hover:border-sakura-400"
             title="Zoom out"
           >
             <ZoomOut className="w-3.5 h-3.5" />
@@ -453,7 +453,7 @@ export default function NoteGraph({
               setPan({ x: 0, y: 0 });
               setSimVersion((v) => v + 1);
             }}
-            className="p-1.5 rounded-md border border-stone-200/80 dark:border-zinc-800 text-stone-600 dark:text-zinc-400 hover:text-stone-900 dark:hover:text-zinc-100"
+            className="p-1.5 rounded-md border border-stone-200/90 dark:border-[#282834] bg-white/70 dark:bg-[#1e1e28] text-stone-600 dark:text-zinc-400 hover:text-stone-900 dark:hover:text-zinc-100 hover:border-sakura-400 dark:hover:border-sakura-400"
             title="Reset graph layout"
           >
             <RotateCcw className="w-3.5 h-3.5" />
@@ -482,11 +482,11 @@ export default function NoteGraph({
         </div>
 
         {/* Selected Node Details Panel */}
-        <div className="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-stone-200/70 dark:border-zinc-800/80 p-4 flex flex-col justify-between bg-[#faf8f5]/60 dark:bg-zinc-950/30">
+        <div className="lg:col-span-4 border-t lg:border-t-0 lg:border-l border-stone-200/80 dark:border-[#282834] p-4 flex flex-col justify-between bg-stone-50/70 dark:bg-[#14141b]/70">
           {selectedNode ? (
             <div className="space-y-3">
               <div className="flex items-center justify-between gap-2">
-                <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded border border-sakura-300/60 dark:border-sakura-800/60 bg-sakura-50/70 dark:bg-sakura-950/40 text-sakura-700 dark:text-sakura-300">
+                <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded border border-sakura-300/80 dark:border-sakura-800/80 bg-sakura-50/70 dark:bg-sakura-950/40 text-sakura-700 dark:text-sakura-300">
                   {selectedNode.source === "vault"
                     ? "Private Org Vault"
                     : selectedNode.source}
@@ -511,7 +511,7 @@ export default function NoteGraph({
                   {selectedNode.tags.map((t) => (
                     <span
                       key={t}
-                      className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-stone-200/70 dark:bg-zinc-800 text-stone-600 dark:text-zinc-400"
+                      className="text-[10px] font-mono px-1.5 py-0.5 rounded bg-stone-100/90 dark:bg-[#20202c] text-stone-600 dark:text-zinc-300 border border-stone-200/60 dark:border-[#2a2a38]"
                     >
                       #{t}
                     </span>
@@ -520,7 +520,7 @@ export default function NoteGraph({
               )}
 
               {/* Connected Neighbors */}
-              <div className="pt-2 border-t border-stone-200/60 dark:border-zinc-800/70 space-y-1.5">
+              <div className="pt-2 border-t border-stone-200/60 dark:border-[#282834] space-y-1.5">
                 <span className="text-[10px] font-mono uppercase tracking-wider text-stone-400 dark:text-zinc-500 flex items-center gap-1">
                   <Link2 className="w-3 h-3" />
                   <span>Connected Notes ({connectedNodes.length})</span>
@@ -536,7 +536,7 @@ export default function NoteGraph({
                         key={cn.id}
                         type="button"
                         onClick={() => setSelectedId(cn.id)}
-                        className="w-full text-left text-xs px-2 py-1 rounded hover:bg-stone-200/60 dark:hover:bg-zinc-800/70 text-stone-700 dark:text-zinc-300 truncate flex items-center justify-between gap-2"
+                        className="w-full text-left text-xs px-2 py-1 rounded hover:bg-stone-200/70 dark:hover:bg-[#22222e] text-stone-700 dark:text-zinc-300 truncate flex items-center justify-between gap-2"
                       >
                         <span className="truncate">{cn.title}</span>
                         <span className="text-[10px] font-mono opacity-60 shrink-0">
@@ -555,11 +555,11 @@ export default function NoteGraph({
           )}
 
           {selectedNode && (
-            <div className="pt-4 mt-3 border-t border-stone-200/60 dark:border-zinc-800/70 flex items-center justify-between gap-2">
+            <div className="pt-4 mt-3 border-t border-stone-200/60 dark:border-[#282834] flex items-center justify-between gap-2">
               {selectedNode.published ? (
                 <Link
                   href={`/post/${selectedNode.slug}`}
-                  className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium bg-stone-900 text-stone-50 dark:bg-sakura-500 dark:text-zinc-950 hover:bg-sakura-600 dark:hover:bg-sakura-400 transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium bg-stone-900 text-white hover:bg-sakura-600 dark:bg-sakura-600 dark:text-white dark:hover:bg-sakura-500 shadow-sm transition-colors"
                 >
                   <span>Read Note</span>
                   <ArrowUpRight className="w-3.5 h-3.5" />

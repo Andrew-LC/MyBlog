@@ -18,7 +18,7 @@ export default async function BlogsPage() {
 
   return (
     <div className="space-y-10">
-      <header className="space-y-2.5 border-b border-stone-200/70 dark:border-zinc-800/80 pb-6">
+      <header className="space-y-2.5 border-b border-stone-200/80 dark:border-[#282834] pb-6">
         <div className="inline-flex items-center gap-2 text-xs font-mono text-sakura-600 dark:text-sakura-400">
           <BookOpen className="w-3.5 h-3.5" />
           <span>Digital Garden · {posts.length} Published Notes</span>

@@ -24,7 +24,7 @@ export default async function HomePage() {
       {/* Hero Section: Clean Typography + Frameless Digital Sakura Pixel Tree */}
       <section className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center pt-2">
         <div className="md:col-span-7 space-y-5">
-          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-[11px] font-mono border border-sakura-300/60 dark:border-sakura-800/60 bg-sakura-50/60 dark:bg-sakura-950/30 text-sakura-700 dark:text-sakura-300">
+          <div className="inline-flex items-center gap-2 px-2.5 py-1 rounded-full text-[11px] font-mono border border-sakura-300/70 dark:border-sakura-800/80 bg-sakura-50/70 dark:bg-sakura-950/40 text-sakura-700 dark:text-sakura-300">
             <Sparkles className="w-3 h-3" />
             <span>Full Stack Developer · Digital Garden</span>
           </div>
@@ -53,7 +53,7 @@ export default async function HomePage() {
           <div className="flex flex-wrap items-center gap-3 pt-1">
             <Link
               href="/blogs"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium bg-stone-900 text-stone-50 dark:bg-sakura-500 dark:text-zinc-950 hover:bg-sakura-600 dark:hover:bg-sakura-400 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium bg-stone-900 text-white hover:bg-sakura-600 dark:bg-sakura-600 dark:hover:bg-sakura-500 dark:text-white shadow-sm transition-colors"
             >
               <BookOpen className="w-4 h-4" />
               <span>All Notes &amp; Graph ({allPosts.length})</span>
@@ -62,7 +62,7 @@ export default async function HomePage() {
 
             <a
               href="#knowledge-graph"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium border border-stone-300/80 dark:border-zinc-800 bg-white/40 dark:bg-zinc-900/40 text-stone-700 dark:text-zinc-300 hover:border-sakura-400 dark:hover:border-sakura-500 transition-colors"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-medium border border-stone-200/90 dark:border-[#282834] bg-white/80 dark:bg-[#181820]/90 text-stone-700 dark:text-zinc-200 hover:border-sakura-400 dark:hover:border-sakura-400 hover:text-sakura-600 dark:hover:text-sakura-300 shadow-sm shadow-stone-200/20 dark:shadow-none transition-colors"
             >
               <Network className="w-4 h-4 text-sakura-500" />
               <span>Explore Graph</span>
@@ -78,7 +78,7 @@ export default async function HomePage() {
 
       {/* Featured Notes Section */}
       <section className="space-y-4">
-        <div className="flex items-end justify-between border-b border-stone-200/70 dark:border-zinc-800/80 pb-3">
+        <div className="flex items-end justify-between border-b border-stone-200/80 dark:border-[#282834] pb-3">
           <div>
             <h2 className="font-cassannet text-xl font-bold text-stone-900 dark:text-zinc-100">
               Featured Notes &amp; Writings
@@ -130,7 +130,7 @@ export default async function HomePage() {
 
       {/* Technologies & Environment Section */}
       <section className="space-y-4">
-        <div className="flex items-center justify-between border-b border-stone-200/70 dark:border-zinc-800/80 pb-3">
+        <div className="flex items-center justify-between border-b border-stone-200/80 dark:border-[#282834] pb-3">
           <h2 className="font-cassannet text-xl font-bold text-stone-900 dark:text-zinc-100 flex items-center gap-2">
             <Code2 className="w-5 h-5 text-sakura-500" />
             <span>Technologies &amp; Environment</span>

@@ -50,13 +50,13 @@ export default function Header() {
   }, [router]);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-stone-200/60 dark:border-zinc-800/70 bg-[#faf8f5]/85 dark:bg-[#121216]/85 backdrop-blur-md">
+    <header className="sticky top-0 z-40 w-full border-b border-stone-200/80 dark:border-[#282834] bg-[#faf8f5]/90 dark:bg-[#121216]/90 backdrop-blur-md transition-colors">
       <div className="max-w-4xl mx-auto px-5 h-16 flex items-center justify-between">
         <Link
           href="/"
           className="group inline-flex items-center gap-2.5 font-semibold tracking-tight text-stone-900 dark:text-zinc-100"
         >
-          <span className="w-7 h-7 rounded-md bg-sakura-100/90 dark:bg-sakura-900/40 border border-sakura-300/60 dark:border-sakura-700/50 flex items-center justify-center text-sakura-600 dark:text-sakura-300">
+          <span className="w-7 h-7 rounded-md bg-sakura-100/90 dark:bg-sakura-950/70 border border-sakura-300/70 dark:border-sakura-800/80 flex items-center justify-center text-sakura-600 dark:text-sakura-300 transition-colors group-hover:scale-105">
             <Flower2 className="w-4 h-4" />
           </span>
           <span className="font-cassannet text-lg tracking-wide">
@@ -78,7 +78,7 @@ export default function Header() {
                   href={item.href}
                   className={`px-3 py-1.5 rounded-lg font-medium transition-colors ${
                     active
-                      ? "bg-sakura-100/80 dark:bg-sakura-950/60 text-sakura-700 dark:text-sakura-300"
+                      ? "bg-sakura-100/90 dark:bg-sakura-950/70 text-sakura-800 dark:text-sakura-200 font-semibold"
                       : "text-stone-600 dark:text-zinc-400 hover:text-stone-900 dark:hover:text-zinc-100"
                   }`}
                 >
@@ -103,7 +103,7 @@ export default function Header() {
                 href="/admin"
                 className={`ml-1 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-mono border transition-colors ${
                   pathname?.startsWith("/admin")
-                    ? "bg-sakura-500 text-zinc-950 border-sakura-400 font-semibold"
+                    ? "bg-sakura-600 text-white border-sakura-500 font-semibold shadow-sm"
                     : "border-sakura-300/80 dark:border-sakura-800/80 bg-sakura-50/70 dark:bg-sakura-950/40 text-sakura-700 dark:text-sakura-300"
                 }`}
               >
@@ -113,7 +113,7 @@ export default function Header() {
             )}
           </nav>
 
-          <div className="h-4 w-px bg-stone-200 dark:bg-zinc-800" />
+          <div className="h-4 w-px bg-stone-200 dark:bg-[#282834]" />
           <ThemeToggle />
         </div>
 
@@ -124,7 +124,7 @@ export default function Header() {
             type="button"
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-label="Toggle navigation menu"
-            className="w-9 h-9 inline-flex items-center justify-center rounded-lg border border-stone-200/80 dark:border-zinc-800 text-stone-700 dark:text-zinc-300"
+            className="w-9 h-9 inline-flex items-center justify-center rounded-lg border border-stone-200/90 dark:border-[#282834] bg-white/70 dark:bg-[#181820]/80 text-stone-700 dark:text-zinc-300"
           >
             {mobileOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
           </button>
@@ -133,7 +133,7 @@ export default function Header() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <nav className="md:hidden border-t border-stone-200/70 dark:border-zinc-800 bg-[#faf8f5] dark:bg-[#121216] px-5 py-4 flex flex-col gap-2">
+        <nav className="md:hidden border-t border-stone-200/80 dark:border-[#282834] bg-[#faf8f5] dark:bg-[#121216] px-5 py-4 flex flex-col gap-2">
           {NAV_ITEMS.map((item) => {
             const Icon = item.icon;
             const active =
@@ -147,7 +147,7 @@ export default function Header() {
                 onClick={() => setMobileOpen(false)}
                 className={`flex items-center gap-2.5 px-3 py-2 rounded-md text-sm font-medium ${
                   active
-                    ? "bg-sakura-100/80 dark:bg-sakura-950/60 text-sakura-700 dark:text-sakura-300"
+                    ? "bg-sakura-100/90 dark:bg-sakura-950/70 text-sakura-800 dark:text-sakura-200 font-semibold"
                     : "text-stone-700 dark:text-zinc-300"
                 }`}
               >

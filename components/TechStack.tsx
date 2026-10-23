@@ -78,17 +78,17 @@ export default function TechStack() {
         return (
           <div
             key={item.name}
-            className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl border transition-colors ${
+            className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl border transition-all ${
               item.highlight
-                ? "border-sakura-200/90 dark:border-sakura-900/50 bg-sakura-50/40 dark:bg-sakura-950/20"
-                : "border-stone-200/80 dark:border-zinc-800/80 bg-white/50 dark:bg-zinc-900/40"
-            } hover:border-sakura-400/70 dark:hover:border-sakura-500/60`}
+                ? "border-sakura-300/80 dark:border-sakura-800/80 bg-sakura-50/70 dark:bg-sakura-950/40 shadow-sm shadow-sakura-500/5"
+                : "border-stone-200/85 dark:border-[#282834] bg-white/80 dark:bg-[#181820]/90 shadow-sm shadow-stone-200/20 dark:shadow-none"
+            } hover:border-sakura-400 dark:hover:border-sakura-400`}
           >
             <div
               className={`w-8 h-8 rounded-lg flex items-center justify-center shrink-0 ${
                 item.highlight
-                  ? "bg-sakura-100 dark:bg-sakura-900/40 text-sakura-600 dark:text-sakura-300"
-                  : "bg-stone-100 dark:bg-zinc-800 text-stone-600 dark:text-zinc-300"
+                  ? "bg-sakura-100 dark:bg-sakura-900/50 text-sakura-700 dark:text-sakura-300"
+                  : "bg-stone-100 dark:bg-[#22222e] text-stone-600 dark:text-stone-300"
               }`}
             >
               <Icon className="w-4 h-4" />

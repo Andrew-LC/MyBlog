@@ -12,23 +12,30 @@
   :root {
     --bg-primary: #faf8f5;
     --bg-elevated: #f3efea;
+    --bg-card: rgba(255, 255, 255, 0.85);
     --text-primary: #1c1917;
     --text-secondary: #57534e;
+    --text-muted: #78716c;
     --border-subtle: #e7e2da;
-    --accent-sakura: #db2777;
+    --border-hover: #fda4b9;
+    --accent-sakura: #e11d59;
   }
 
   .dark {
     --bg-primary: #121216;
-    --bg-elevated: #1a1a20;
-    --text-primary: #f4f4f6;
+    --bg-elevated: #181820;
+    --bg-card: rgba(24, 24, 32, 0.85);
+    --text-primary: #f5f5f7;
     --text-secondary: #a1a1aa;
-    --border-subtle: #272730;
-    --accent-sakura: #f472b6;
+    --text-muted: #71717a;
+    --border-subtle: #282834;
+    --border-hover: #fb7193;
+    --accent-sakura: #fb7193;
   }
 
   html {
     scroll-behavior: smooth;
+    color-scheme: light dark;
   }
 
   body {
@@ -36,7 +43,7 @@
     color: var(--text-primary);
     font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     -webkit-font-smoothing: antialiased;
-    transition: background-color 150ms ease, color 150ms ease;
+    transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
   }
 }
 
@@ -51,37 +58,43 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(156, 163, 175, 0.3);
+  background: rgba(168, 162, 158, 0.35);
   border-radius: 9999px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(161, 161, 170, 0.25);
+}
+
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(244, 114, 182, 0.5);
+  background: rgba(251, 113, 147, 0.65);
 }
 
 /* Syntax Highlighting (Highlight.js / Rehype-Highlight theme) */
 pre code.hljs {
   display: block;
   overflow-x: auto;
-  padding: 1.1rem 1.25rem;
-  border-radius: 0.5rem;
+  padding: 1.15rem 1.3rem;
+  border-radius: 0.75rem;
   font-size: 0.875rem;
   line-height: 1.65;
-  background: #18181f;
-  color: #e4e4ef;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #181820;
+  color: #e6e6f0;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.25);
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #71717a;
+  color: #787888;
   font-style: italic;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
 .hljs-Addition {
-  color: #f472b6;
+  color: #fb7193;
+  font-weight: 500;
 }
 
 .hljs-number,
@@ -90,7 +103,7 @@ pre code.hljs {
 .hljs-literal,
 .hljs-doctag,
 .hljs-regexp {
-  color: #f9a8d4;
+  color: #fda4b9;
 }
 
 .hljs-title,
@@ -107,7 +120,7 @@ pre code.hljs {
 .hljs-template-variable,
 .hljs-class .hljs-title,
 .hljs-type {
-  color: #fcd34d;
+  color: #fde047;
 }
 
 .hljs-symbol,

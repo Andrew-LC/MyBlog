@@ -168,7 +168,7 @@ export default function AdminStudioPage() {
 
   if (!authenticated) {
     return (
-      <div className="max-w-md mx-auto my-12 p-6 sm:p-8 rounded-2xl border border-stone-200/90 dark:border-zinc-800/90 bg-white/70 dark:bg-zinc-900/50 space-y-6">
+      <div className="max-w-md mx-auto my-12 p-6 sm:p-8 rounded-2xl border border-stone-200/90 dark:border-[#282834] bg-white/80 dark:bg-[#181820]/90 shadow-sm shadow-stone-200/20 dark:shadow-none space-y-6">
         <div className="space-y-2">
           <div className="w-10 h-10 rounded-xl bg-sakura-100 dark:bg-sakura-950/70 border border-sakura-300/70 dark:border-sakura-800 flex items-center justify-center text-sakura-600 dark:text-sakura-300">
             <Lock className="w-5 h-5" />
@@ -194,7 +194,7 @@ export default function AdminStudioPage() {
                 value={passcode}
                 onChange={(e) => setPasscode(e.target.value)}
                 placeholder="Enter ADMIN_PASSCODE (default: sakura-admin)"
-                className="w-full pl-9 pr-3 py-2 text-sm rounded-xl border border-stone-300 dark:border-zinc-800 bg-white dark:bg-zinc-950 text-stone-900 dark:text-zinc-100 focus:outline-none focus:border-sakura-400"
+                className="w-full pl-9 pr-3 py-2 text-sm rounded-xl border border-stone-300 dark:border-[#282834] bg-white dark:bg-[#121216] text-stone-900 dark:text-zinc-100 focus:outline-none focus:border-sakura-400"
                 autoFocus
               />
             </div>
@@ -205,13 +205,13 @@ export default function AdminStudioPage() {
 
           <button
             type="submit"
-            className="w-full py-2.5 px-4 rounded-xl text-xs font-mono font-semibold uppercase tracking-wider bg-stone-900 text-white dark:bg-sakura-500 dark:text-zinc-950 hover:bg-sakura-600 dark:hover:bg-sakura-400 transition-colors"
+            className="w-full py-2.5 px-4 rounded-xl text-xs font-mono font-semibold uppercase tracking-wider bg-stone-900 text-white dark:bg-sakura-600 dark:text-white hover:bg-sakura-600 dark:hover:bg-sakura-500 transition-colors shadow-sm"
           >
             Unlock Owner Studio
           </button>
         </form>
 
-        <p className="text-[11px] font-mono text-stone-400 dark:text-zinc-500 border-t border-stone-200/70 dark:border-zinc-800/80 pt-4">
+        <p className="text-[11px] font-mono text-stone-400 dark:text-zinc-500 border-t border-stone-200/80 dark:border-[#282834] pt-4">
           Tip: Configure <code className="text-sakura-500">ADMIN_PASSCODE</code> in{" "}
           <code>.env.local</code> (defaults to <code>sakura-admin</code> locally).
         </p>
@@ -222,7 +222,7 @@ export default function AdminStudioPage() {
   return (
     <div className="space-y-8">
       {/* Top Studio Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-200/80 dark:border-zinc-800/80 pb-5">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-stone-200/80 dark:border-[#282834] pb-5">
         <div>
           <div className="inline-flex items-center gap-2 text-xs font-mono text-sakura-600 dark:text-sakura-400 mb-1">
             <Sparkles className="w-3.5 h-3.5" />
@@ -243,7 +243,7 @@ export default function AdminStudioPage() {
           <button
             type="button"
             onClick={handleLogout}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono border border-stone-200 dark:border-zinc-800 text-stone-600 dark:text-zinc-400 hover:text-rose-500 transition-colors"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono border border-stone-200/90 dark:border-[#282834] bg-white/70 dark:bg-[#181820] text-stone-600 dark:text-zinc-400 hover:text-rose-500 transition-colors"
           >
             <LogOut className="w-3.5 h-3.5" />
             <span>Lock</span>
@@ -258,8 +258,8 @@ export default function AdminStudioPage() {
           onClick={() => setActiveTab("vault")}
           className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium border transition-colors ${
             activeTab === "vault"
-              ? "bg-sakura-100/90 dark:bg-sakura-950/70 border-sakura-300 dark:border-sakura-800 text-sakura-800 dark:text-sakura-200"
-              : "bg-white/50 dark:bg-zinc-900/40 border-stone-200/80 dark:border-zinc-800 text-stone-600 dark:text-zinc-400"
+              ? "bg-sakura-100/90 dark:bg-sakura-950/80 border-sakura-300 dark:border-sakura-800 text-sakura-800 dark:text-sakura-200 font-semibold shadow-sm"
+              : "bg-white/80 dark:bg-[#181820]/90 border-stone-200/85 dark:border-[#282834] text-stone-600 dark:text-zinc-300 hover:text-stone-900 dark:hover:text-white"
           }`}
         >
           <FolderGit2 className="w-4 h-4" />
@@ -271,8 +271,8 @@ export default function AdminStudioPage() {
           onClick={() => setActiveTab("graph")}
           className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium border transition-colors ${
             activeTab === "graph"
-              ? "bg-sakura-100/90 dark:bg-sakura-950/70 border-sakura-300 dark:border-sakura-800 text-sakura-800 dark:text-sakura-200"
-              : "bg-white/50 dark:bg-zinc-900/40 border-stone-200/80 dark:border-zinc-800 text-stone-600 dark:text-zinc-400"
+              ? "bg-sakura-100/90 dark:bg-sakura-950/80 border-sakura-300 dark:border-sakura-800 text-sakura-800 dark:text-sakura-200 font-semibold shadow-sm"
+              : "bg-white/80 dark:bg-[#181820]/90 border-stone-200/85 dark:border-[#282834] text-stone-600 dark:text-zinc-300 hover:text-stone-900 dark:hover:text-white"
           }`}
         >
           <Network className="w-4 h-4" />
@@ -284,8 +284,8 @@ export default function AdminStudioPage() {
           onClick={() => setActiveTab("editor")}
           className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-medium border transition-colors ${
             activeTab === "editor"
-              ? "bg-sakura-100/90 dark:bg-sakura-950/70 border-sakura-300 dark:border-sakura-800 text-sakura-800 dark:text-sakura-200"
-              : "bg-white/50 dark:bg-zinc-900/40 border-stone-200/80 dark:border-zinc-800 text-stone-600 dark:text-zinc-400"
+              ? "bg-sakura-100/90 dark:bg-sakura-950/80 border-sakura-300 dark:border-sakura-800 text-sakura-800 dark:text-sakura-200 font-semibold shadow-sm"
+              : "bg-white/80 dark:bg-[#181820]/90 border-stone-200/85 dark:border-[#282834] text-stone-600 dark:text-zinc-300 hover:text-stone-900 dark:hover:text-white"
           }`}
         >
           <PenSquare className="w-4 h-4" />
@@ -572,7 +572,7 @@ export default function AdminStudioPage() {
 
             <button
               type="submit"
-              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-mono font-semibold bg-stone-900 text-white dark:bg-sakura-500 dark:text-zinc-950 hover:bg-sakura-600 dark:hover:bg-sakura-400 transition-colors"
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl text-xs font-mono font-semibold bg-stone-900 text-white hover:bg-sakura-600 dark:bg-sakura-600 dark:text-white dark:hover:bg-sakura-500 transition-colors shadow-sm"
             >
               <Plus className="w-4 h-4" />
               <span>Save &amp; Publish Note</span>

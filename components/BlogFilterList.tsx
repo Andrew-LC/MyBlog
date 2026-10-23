@@ -62,8 +62,8 @@ export default function BlogFilterList({ posts }: { posts: BlogPostMeta[] }) {
                 onClick={() => setSourceFilter(tab.id)}
                 className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors ${
                   active
-                    ? "bg-sakura-100/90 dark:bg-sakura-950/70 border-sakura-300 dark:border-sakura-800 text-sakura-800 dark:text-sakura-200"
-                    : "bg-white/50 dark:bg-zinc-900/40 border-stone-200/80 dark:border-zinc-800 text-stone-600 dark:text-zinc-400 hover:text-stone-900 dark:hover:text-zinc-200"
+                    ? "bg-sakura-100/90 dark:bg-sakura-950/80 border-sakura-300 dark:border-sakura-800 text-sakura-800 dark:text-sakura-200 font-semibold shadow-sm"
+                    : "bg-white/80 dark:bg-[#181820]/90 border-stone-200/85 dark:border-[#282834] text-stone-600 dark:text-zinc-300 hover:text-stone-900 dark:hover:text-white hover:border-sakura-300 dark:hover:border-sakura-800"
                 }`}
               >
                 <Icon className="w-3.5 h-3.5" />
@@ -81,7 +81,7 @@ export default function BlogFilterList({ posts }: { posts: BlogPostMeta[] }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search notes or tags..."
-            className="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg border border-stone-200/90 dark:border-zinc-800 bg-white/70 dark:bg-zinc-900/60 text-stone-800 dark:text-zinc-200 placeholder:text-stone-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-sakura-400"
+            className="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg border border-stone-200/90 dark:border-[#282834] bg-white/80 dark:bg-[#181820]/90 text-stone-900 dark:text-zinc-100 placeholder:text-stone-400 dark:placeholder:text-zinc-500 focus:outline-none focus:border-sakura-400 dark:focus:border-sakura-500 shadow-sm shadow-stone-200/20 dark:shadow-none"
           />
         </div>
       </div>
@@ -92,10 +92,10 @@ export default function BlogFilterList({ posts }: { posts: BlogPostMeta[] }) {
           <button
             type="button"
             onClick={() => setSelectedTag(null)}
-            className={`text-[11px] font-mono px-2.5 py-1 rounded-md transition-colors ${
+            className={`text-[11px] font-mono px-2.5 py-1 rounded-md border transition-colors ${
               selectedTag === null
-                ? "bg-stone-800 text-stone-100 dark:bg-zinc-200 dark:text-zinc-900"
-                : "bg-stone-200/60 dark:bg-zinc-800/70 text-stone-600 dark:text-zinc-400 hover:text-stone-900 dark:hover:text-zinc-200"
+                ? "bg-stone-900 text-white dark:bg-zinc-100 dark:text-zinc-900 border-stone-900 dark:border-zinc-100 font-semibold shadow-sm"
+                : "bg-stone-100/90 dark:bg-[#1e1e28] text-stone-600 dark:text-zinc-300 hover:text-stone-900 dark:hover:text-white border-stone-200/70 dark:border-[#282834]"
             }`}
           >
             all tags
@@ -107,10 +107,10 @@ export default function BlogFilterList({ posts }: { posts: BlogPostMeta[] }) {
                 key={tag}
                 type="button"
                 onClick={() => setSelectedTag(active ? null : tag)}
-                className={`text-[11px] font-mono px-2.5 py-1 rounded-md transition-colors ${
+                className={`text-[11px] font-mono px-2.5 py-1 rounded-md border transition-colors ${
                   active
-                    ? "bg-sakura-600 text-white dark:bg-sakura-500 dark:text-zinc-950"
-                    : "bg-stone-200/60 dark:bg-zinc-800/70 text-stone-600 dark:text-zinc-400 hover:text-stone-900 dark:hover:text-zinc-200"
+                    ? "bg-sakura-600 text-white dark:bg-sakura-600 dark:text-white border-sakura-600 font-semibold shadow-sm"
+                    : "bg-stone-100/90 dark:bg-[#1e1e28] text-stone-600 dark:text-zinc-300 hover:text-stone-900 dark:hover:text-white border-stone-200/70 dark:border-[#282834]"
                 }`}
               >
                 #{tag} <span className="opacity-60">({count})</span>
@@ -122,7 +122,7 @@ export default function BlogFilterList({ posts }: { posts: BlogPostMeta[] }) {
 
       {/* Results List */}
       {filtered.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-stone-300 dark:border-zinc-800 p-10 text-center text-sm text-stone-500 dark:text-zinc-400">
+        <div className="rounded-xl border border-dashed border-stone-300 dark:border-[#282834] bg-white/40 dark:bg-[#181820]/40 p-10 text-center text-sm text-stone-500 dark:text-zinc-400">
           No notes matched your current filter. Try clearing the search or tag selection.
         </div>
       ) : (

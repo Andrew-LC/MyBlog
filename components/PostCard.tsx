@@ -13,19 +13,19 @@ const SOURCE_CONFIG: Record<
   org: {
     label: "ORG-ROAM",
     badgeClass:
-      "bg-sakura-100/80 dark:bg-sakura-950/60 text-sakura-700 dark:text-sakura-300 border-sakura-300/60 dark:border-sakura-800/60",
+      "bg-sakura-100/90 dark:bg-sakura-950/70 text-sakura-800 dark:text-sakura-200 border-sakura-200 dark:border-sakura-800/80",
     icon: Network,
   },
   markdown: {
     label: "MARKDOWN",
     badgeClass:
-      "bg-stone-200/70 dark:bg-zinc-800 text-stone-700 dark:text-zinc-300 border-stone-300/70 dark:border-zinc-700",
+      "bg-stone-100 dark:bg-[#22222e] text-stone-700 dark:text-zinc-300 border-stone-200 dark:border-[#30303e]",
     icon: FileText,
   },
   notion: {
     label: "NOTION",
     badgeClass:
-      "bg-amber-100/70 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 border-amber-300/60 dark:border-amber-800/60",
+      "bg-amber-100/90 dark:bg-amber-950/60 text-amber-800 dark:text-amber-200 border-amber-200 dark:border-amber-800/80",
     icon: Database,
   },
 };
@@ -35,7 +35,7 @@ export default function PostCard({ post }: { post: BlogPostMeta }) {
   const SourceIcon = sourceInfo.icon;
 
   return (
-    <article className="group relative rounded-xl border border-stone-200/80 dark:border-zinc-800/90 bg-white/60 dark:bg-zinc-900/40 p-5 hover:border-sakura-400/80 dark:hover:border-sakura-500/60 transition-colors">
+    <article className="group relative rounded-xl border border-stone-200/85 dark:border-[#282834] bg-white/80 dark:bg-[#181820]/90 p-5 hover:border-sakura-400/80 dark:hover:border-sakura-400/70 shadow-sm shadow-stone-200/20 dark:shadow-none transition-all">
       <div className="flex flex-wrap items-center justify-between gap-2 mb-2.5">
         <div className="flex items-center gap-2">
           <span
@@ -78,7 +78,7 @@ export default function PostCard({ post }: { post: BlogPostMeta }) {
           {post.tags.map((tag) => (
             <span
               key={tag}
-              className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-stone-100 dark:bg-zinc-800/80 text-stone-600 dark:text-zinc-400"
+              className="text-[11px] font-mono px-2 py-0.5 rounded-md bg-stone-100/90 dark:bg-[#20202c] text-stone-600 dark:text-zinc-300 border border-stone-200/60 dark:border-[#2a2a38]"
             >
               #{tag}
             </span>

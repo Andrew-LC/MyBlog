@@ -3,7 +3,7 @@ import { Flower2, Github, Lock } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-stone-200/60 dark:border-zinc-800/70 mt-20">
+    <footer className="w-full border-t border-stone-200/80 dark:border-[#282834] mt-20">
       <div className="max-w-4xl mx-auto px-5 py-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 dark:text-zinc-400">
         <div className="flex items-center gap-2">
           <Flower2 className="w-3.5 h-3.5 text-sakura-500 dark:text-sakura-400" />
